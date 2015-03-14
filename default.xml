@@ -439,7 +439,7 @@
   <project path="hardware/ril" name="CyanogenMod/android_hardware_ril" groups="pdk" remote="cm-review" />
   <project path="hardware/ril-caf" name="CyanogenMod/android_hardware_ril" groups="pdk" remote="cm-review" revision="cm-12.0-caf" />
   <project path="hardware/samsung_slsi/exynos5" name="CyanogenMod/android_hardware_samsung_slsi_exynos5" remote="cm-review" />
-   <project path="hardware/ti/omap4" name="CyanogenMod/android_hardware_ti_omap4" remote="cm-review" />
+  <project path="hardware/ti/omap4" name="CyanogenMod/android_hardware_ti_omap4" remote="cm-review" />
   <project path="hardware/ti/omap4-aah" name="platform/hardware/ti/omap4-aah" groups="omap4-aah" remote="aosp" />
   <project path="hardware/ti/omap4xxx" name="CyanogenMod/android_hardware_ti_omap4xxx" remote="cm-review" />
   <project path="hardware/ti/wlan" name="CyanogenMod/android_hardware_ti_wlan" remote="cm-review" />
@@ -471,6 +471,7 @@
   <project path="packages/apps/InCallUI" name="CyanogenMod/android_packages_apps_InCallUI" remote="cm-review" />
   <project path="packages/apps/KeyChain" name="CyanogenMod/android_packages_apps_KeyChain" remote="cm-review" />
   <project path="packages/apps/LockClock" name="CyanogenMod/android_packages_apps_LockClock" remote="cm-review" />
+  <project path="packages/apps/ManagedProvisioning" name="CyanogenMod/android_packages_apps_ManagedProvisioning" remote="cm-review" />
   <project path="packages/apps/Mms" name="CyanogenMod/android_packages_apps_Mms-caf" remote="cm-review" />
   <project path="packages/apps/Nfc" name="CyanogenMod/android_packages_apps_Nfc" remote="cm-review" />
   <project path="packages/apps/OneTimeInitializer" name="platform/packages/apps/OneTimeInitializer" remote="aosp" />

@@ -1,50 +1,159 @@
-CyanogenMod
+![alt text](http://fs2.directupload.net/images/150119/dyk4nrof.jpg "CyanHacker")
+
+To get started with CyanHacker, you'll need to get
+familiar with [Git and Repo](http://source.android.com/source/version-control.html).
+
+Create the Directories
 ===========
 
-Submitting Patches
+You will need to set up some directories in your build environment.
+
+To create them run:
+
+    mkdir -p ~/bin
+    mkdir -p ~/cyanhacker
+
+Install the Repository
+===========
+
+Enter the following to download the "repo" binary:
+
+    curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+
+    chmod a+x ~/bin/repo
+
+You may need to reboot for these changes to take effect. 
+Now enter the following to initialize the repository:
+
+    cd ~/cyanhacker
+
+Initialising Cyanhacker
+===========
+
+    repo init -u git://github.com/CyanHacker-Lollipop/manifest.git -b lollipop-5.1
+
+Building
+===========
+
+	bash build.sh [options] [device]
+	
+Options:(more to come)
+
+>-c# Cleanin options before build:
+
+>  1 - make clobber
+
+>  2 - make dirty
+
+>  3 - make magic
+
+>  4 - make kernelclean
+
+>  5 - remove ccache and /target
+
+>-j# Set jobs
+
+>-s  Sync before build
+
+>-l  Save the build output into a logfile
+
+Example:
+
+	bash build.sh -c1 -j18 hammerhead
+
+Supported Devices
+===========
+
+>m8
+
+>jfltexx
+
+>hammerhead
+
+>mako
+
+>falcon
+
+>bacon
+
+>shamu
+	
+Becoming a part of CyanHacker
+===========
+
+Contribution
 ------------------
-Patches are always welcome!  Please submit your patches via CyanogenMod Gerrit!
-You can do this by using these commands:
 
-    (From root android directory)
-    . build/envsetup.sh
-    (Go to repo you are patching, make your changes and commit)
-    cmgerrit <for(new)/changes(patch set)> <branch/change-id> 
+If you want to contribute to this project in any way, whether it´s becoming a developer of CyanHacker or a manitainer or even something else everything is highly appreciated. Just contact me .
 
-    repo start cm-12.1 .
-    (Make your changes and commit)
-    repo upload .
-Note: "." meaning current directory
-For more help on using this tool, use this command: repo help upload
+Support this ROM for another device
+------------------
 
-Make your changes and commit with a detailed message, starting with what you are working with (i.e. vision: Update Kernel)
-Commit your patches in a single commit. Squash multiple commit using this command: git rebase -i HEAD~<# of commits>
+If you want to build this ROM for another device and support it there, feel free to do that, it´s greatly appreciated, just contact me and I´ll add support for this specifiy device.
 
-To view the status of your and others' patches, visit [CyanogenMod Code Review](http://review.cyanogenmod.org/)
+Submitting Patches
+===========
 
+[Our Gerrit](https://review.gerrithub.io/#/admin/projects/?filter=CyanHacker)
 
-Getting Started
----------------
+Setup
+------------------
 
-To get started with Android/CyanogenMod, you'll need to get
-familiar with [Git and Repo](http://source.android.com/source/using-repo.html).
+(Windows: Use Git PowerShell, Download)
 
-To initialize your local repository using the CyanogenMod trees, use a command like this:
+(Lines marked with # are for Linux users only)
 
-    repo init -u git://github.com/CyanogenMod/android.git -b cm-12.1
+(Lines marked with * are for Windows users only)
 
-Then to sync up:
+	#sudo apt-get install git
+	git config --global user.email "your-email@domain.com"
+	git config --global user.name "your-username"
+	cd ~/.ssh
+	ssh-keygen -t rsa -C "your-email@domain.com"
+	cat id_rsa.pub
+	
+//go to gerrithub settings → ssh public keys
 
-    repo sync
+//click on add key
 
-Please see the [CyanogenMod Wiki](http://wiki.cyanogenmod.org/) for building instructions.
+//copy the content of ~/.shh/id_rsa.pub to the box in gerrit settings
 
-For more information on this Github Organization and how it is structured, 
-please [read the wiki article](http://wiki.cyanogenmod.org/w/Github_Organization)
+	#sudo apt-get install python-pip
+	#sudo pip install git-review
+	#git config --global review.review.gerrithub.io.username "gerrit username"
+	#git config --global review.review.gerrithub.io.email "email you registered with"
 
-Buildbot
---------
+Uploading a change
+------------------
 
-All supported devices are built nightly and periodically as changes are committed to ensure the source trees remain buildable.
+	#ssh-add (only if you get errors while pushing)
+	git clone ssh://USERNAME@review.gerrithub.io:29418/CyanHacker-Lollipop/REPONAME 
+	scp -p -P 29418 USERNAME@review.gerrithub.io:hooks/commit-msg REPONAME/.git/hooks/
+	cd REPONAME
+	
+//make your changes
+	
+    git add -A  //to add all changed files to your next commit
+	git commit -s
+	
+//#a nano will pop up where you can enter the commit message, first line is the title, the rest will be the change description
+	
+	#cntr+o
+	#cntr+x
+	
+//*a text editor will pop up where you can enter the commit message, first line is the title, the rest will be the change description
 
-You can view the current build statuses at [CyanogenMod Jenkins](http://jenkins.cyanogenmod.org/)
+//*save the file
+
+//*close the text editor
+
+	git push origin HEAD:refs/for/BRANCHNAME
+
+Uploading a Patch-Set
+------------------
+
+//change the files you want
+
+    git add -A  //to add all changed files to your next commit
+	git commit --amend
+	git push origin HEAD:refs/for/BRANCHNAME 

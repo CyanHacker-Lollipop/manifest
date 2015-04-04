@@ -165,7 +165,7 @@
   <project path="external/google-fonts/cutive-mono" name="platform/external/google-fonts/cutive-mono" groups="pdk-cw-fs" remote="aosp" />
   <project path="external/google-tv-pairing-protocol" name="platform/external/google-tv-pairing-protocol" remote="aosp" />
   
-  <project path="external/gmock" name="CyanogenMod/android_external_gmock"remote="cm-review" />
+  <project path="external/gmock" name="CyanogenMod/android_external_gmock" remote="cm-review" />
   <project path="external/gson" name="CyanogenMod/android_external_gson" remote="cm-review" />
   <project path="external/gtest" name="platform/external/gtest" groups="pdk" remote="aosp" />
   <project path="external/guava" name="platform/external/guava" groups="pdk-cw-fs,tradefed" remote="aosp" />

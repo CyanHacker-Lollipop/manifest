@@ -9,8 +9,11 @@
   <remote  name="cm-review"
            fetch=".."
            review="review.cyanogenmod.org" 
-		   revision="refs/heads/cm-12.1" />	   
-
+		   revision="refs/heads/cm-12.1" />	  
+		   
+  <remote  name="cm"
+           fetch="https://github.com/CyanogenMod" />
+		   
   <remote  name="gh"
            fetch="https://github.com/" />
 

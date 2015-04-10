@@ -53,7 +53,7 @@
   
   <project path="device/google/accessory/arduino" name="device/google/accessory/arduino" groups="device" remote="aosp" />
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" groups="device" remote="aosp" />
-  <project path="device/google/atv" name="CyanogenMod/android_device_google_atv" groups="device" /> 
+  <project path="device/google/atv" name="CyanogenMod/android_device_google_atv" groups="device" remote="cm-review" /> 
    
   <project path="device/qcom/sepolicy" name="CyanogenMod/android_device_qcom_sepolicy" remote="cm-review" />
   <project path="device/sample" name="device/sample" groups="pdk" remote="aosp" />
@@ -497,7 +497,7 @@
   <project path="packages/apps/PackageInstaller" name="CyanogenMod/android_packages_apps_PackageInstaller" remote="cm-review" />
   <project path="packages/apps/PhoneCommon" name="CyanogenMod/android_packages_apps_PhoneCommon" remote="cm-review" />
   <project path="packages/apps/Provision" name="CyanogenMod/android_packages_apps_Provision" remote="cm-review" />
-  <project path="packages/apps/Settings" name="packages_apps_Settings" revision="lollipop.5.1-new" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" revision="lollipop-5.1-new" />
   <project path="packages/apps/SmartCardService" name="CyanogenMod/android_packages_apps_SmartCardService" remote="cm-review" />
   <project path="packages/apps/SoundRecorder" name="CyanogenMod/android_packages_apps_SoundRecorder" remote="cm-review" />
   <project path="packages/apps/SpeechRecorder" name="CyanogenMod/android_packages_apps_SpeechRecorder" remote="cm-review" />
